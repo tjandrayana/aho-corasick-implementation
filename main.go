@@ -136,164 +136,164 @@ func main() {
 	m := Init()
 
 	tc := []TestCase{
-		TestCase{
+		{
 			L3_geo_id:   "14_184_2389",
 			AddressName: "Perum Negeri Jaya Pedasong Pekajangan Kendaldoyong--###--###--###--lamparCilik,rumah BILLY wea 081246944944",
 			Identifier:  AddressIdentifier,
 		},
-		TestCase{
+		{
 			L3_geo_id:   "14_188_2466",
 			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbahnari tukang--###--###--###--",
 			Identifier:  AddressIdentifier,
 		},
-		TestCase{
+		{
 			L3_geo_id:   "14_188_2466",
 			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
 			Identifier:  AddressIdentifier,
 		},
-		TestCase{
+		{
 			L3_geo_id:   "14_188_2466",
 			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
 			Identifier:  AddressIdentifier,
 		},
-		TestCase{
+		{
 			L3_geo_id:   "14_188_2466",
 			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
 			Identifier:  AddressIdentifier,
 		},
-		TestCase{
+		{
 			L3_geo_id:   "14_188_2466",
 			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
 			Identifier:  AddressIdentifier,
 		},
-		TestCase{
+		{
 			L3_geo_id:   "14_188_2466",
 			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
 			Identifier:  AddressIdentifier,
 		},
-		TestCase{
+		{
 			L3_geo_id:   "14_188_2466",
 			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
 			Identifier:  AddressIdentifier,
 		},
-		TestCase{
+		{
 			L3_geo_id:   "14_188_2466",
 			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
 			Identifier:  AddressIdentifier,
 		},
-		TestCase{
+		{
 			L3_geo_id:   "14_188_2466",
 			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
 			Identifier:  AddressIdentifier,
 		},
-		TestCase{
+		{
 			L3_geo_id:   "14_188_2466",
 			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
 			Identifier:  AddressIdentifier,
 		},
-		TestCase{
+		{
 			L3_geo_id:   "14_188_2466",
 			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
 			Identifier:  AddressIdentifier,
 		},
-		TestCase{
+		{
 			L3_geo_id:   "14_188_2466",
 			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
 			Identifier:  AddressIdentifier,
 		},
-		TestCase{
+		{
 			L3_geo_id:   "14_188_2466",
 			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
 			Identifier:  AddressIdentifier,
 		},
-		TestCase{
+		{
 			L3_geo_id:   "14_188_2466",
 			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
 			Identifier:  AddressIdentifier,
 		},
-		TestCase{
+		{
 			L3_geo_id:   "14_188_2466",
 			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
 			Identifier:  AddressIdentifier,
 		},
-		TestCase{
+		{
 			L3_geo_id:   "14_188_2466",
 			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
 			Identifier:  AddressIdentifier,
 		},
-		TestCase{
+		{
 			L3_geo_id:   "14_188_2466",
 			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
 			Identifier:  AddressIdentifier,
 		},
-		TestCase{
+		{
 			L3_geo_id:   "14_188_2466",
 			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
 			Identifier:  AddressIdentifier,
 		},
-		TestCase{
+		{
 			L3_geo_id:   "14_188_2466",
 			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
 			Identifier:  AddressIdentifier,
 		},
-		TestCase{
+		{
 			L3_geo_id:   "14_188_2466",
 			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
 			Identifier:  AddressIdentifier,
 		},
-		TestCase{
+		{
 			L3_geo_id:   "14_188_2466",
 			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
 			Identifier:  AddressIdentifier,
 		},
-		TestCase{
+		{
 			L3_geo_id:   "14_188_2466",
 			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
 			Identifier:  AddressIdentifier,
 		},
-		TestCase{
+		{
 			L3_geo_id:   "14_188_2466",
 			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
 			Identifier:  AddressIdentifier,
 		},
-		TestCase{
+		{
 			L3_geo_id:   "14_188_2466",
 			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
 			Identifier:  AddressIdentifier,
 		},
-		TestCase{
+		{
 			L3_geo_id:   "14_188_2466",
 			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
 			Identifier:  AddressIdentifier,
 		},
-		TestCase{
+		{
 			L3_geo_id:   "14_188_2466",
 			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
 			Identifier:  AddressIdentifier,
 		},
-		TestCase{
+		{
 			L3_geo_id:   "15_222_3043",
 			AddressName: "jln sahrun dsn nanggungan rt 02 rw 08--###--###--###--( tembok kramik merah)",
 			Identifier:  AddressIdentifier,
 		},
-		TestCase{
+		{
 			L3_geo_id:   "15_222_3043",
 			AddressName: "jln Kasman. dsn nanggungan RT/RW 01/09 ds Jatirejo--###--###--###--rumah belakang masjid nanggungan",
 			Identifier:  AddressIdentifier,
 		},
 
-		// Name TestCase
-		TestCase{
+		// Name Testcase
+		{
 			L3_geo_id:   "15_228_3194",
 			AddressName: "SaPNCd Evander",
 			Identifier:  NameIdentifier,
 		},
-		TestCase{
+		{
 			L3_geo_id:   "11_146_1636",
 			AddressName: "Bang Wizi Satria",
 			Identifier:  NameIdentifier,
 		},
-		TestCase{
+		{
 			L3_geo_id:   "11_146_1636",
 			AddressName: "BangWizi Satria",
 			Identifier:  NameIdentifier,
