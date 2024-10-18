@@ -12,8 +12,8 @@ import (
 )
 
 const (
-	NameIdentifier    string = "name"
-	AddressIdentifier string = "address"
+	NameIdentifier    string = "NameIdentifier"
+	AddressIdentifier string = "AddressIdentifier"
 )
 
 type Module struct {
@@ -25,12 +25,12 @@ type Module struct {
 
 func Init() Module {
 
-	nameDic := CreateDictionary("name.csv")
-	addDic := CreateDictionary("add.csv")
+	nameDic := CreateDictionary("files/name.csv")
+	addDic := CreateDictionary("files/add.csv")
 
 	addBuilder := ahocorasick.NewAhoCorasickBuilder(ahocorasick.Opts{
 		AsciiCaseInsensitive: true,
-		MatchOnlyWholeWords:  true,
+		MatchOnlyWholeWords:  false,
 		MatchKind:            ahocorasick.LeftMostFirstMatch,
 		DFA:                  true,
 	})
@@ -101,11 +101,7 @@ func CreateDictionary(filename string) map[string][]string {
 		dictionary[l3GeoID] = word
 	}
 
-	for k, v := range dictionary {
-		fmt.Printf("L3_geo_id: %s, Word: %v\n", k, v)
-	}
-
-	fmt.Printf("\n")
+	fmt.Printf("Total Dictionary Loaded : %v \n", len(dictionary))
 
 	return dictionary
 }
@@ -118,16 +114,15 @@ func BuildAhorasickMap(builder ahocorasick.AhoCorasickBuilder, dictionary map[st
 		mapAhorasick[k] = builder.Build(v)
 	}
 
-	fmt.Printf("BuildAhorasickMap  taken %v micro second\n ", time.Since(start).Microseconds())
+	fmt.Printf("BuildAhorasickMap  taken %v micro second\n", time.Since(start).Microseconds())
 
 	return mapAhorasick
 }
 
 type TestCase struct {
-	L3_geo_id   string
-	AddressName string
-	Name        string
-	Identifier  string
+	KeyID      string `json:"key_id"`
+	Name       string `json:"name"`
+	Identifier string `json:"identifier"`
 }
 
 func main() {
@@ -135,169 +130,11 @@ func main() {
 	st := time.Now()
 	m := Init()
 
-	tc := []TestCase{
-		{
-			L3_geo_id:   "14_184_2389",
-			AddressName: "Perum Negeri Jaya Pedasong Pekajangan Kendaldoyong--###--###--###--lamparCilik,rumah BILLY wea 081246944944",
-			Identifier:  AddressIdentifier,
-		},
-		{
-			L3_geo_id:   "14_188_2466",
-			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbahnari tukang--###--###--###--",
-			Identifier:  AddressIdentifier,
-		},
-		{
-			L3_geo_id:   "14_188_2466",
-			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
-			Identifier:  AddressIdentifier,
-		},
-		{
-			L3_geo_id:   "14_188_2466",
-			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
-			Identifier:  AddressIdentifier,
-		},
-		{
-			L3_geo_id:   "14_188_2466",
-			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
-			Identifier:  AddressIdentifier,
-		},
-		{
-			L3_geo_id:   "14_188_2466",
-			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
-			Identifier:  AddressIdentifier,
-		},
-		{
-			L3_geo_id:   "14_188_2466",
-			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
-			Identifier:  AddressIdentifier,
-		},
-		{
-			L3_geo_id:   "14_188_2466",
-			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
-			Identifier:  AddressIdentifier,
-		},
-		{
-			L3_geo_id:   "14_188_2466",
-			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
-			Identifier:  AddressIdentifier,
-		},
-		{
-			L3_geo_id:   "14_188_2466",
-			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
-			Identifier:  AddressIdentifier,
-		},
-		{
-			L3_geo_id:   "14_188_2466",
-			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
-			Identifier:  AddressIdentifier,
-		},
-		{
-			L3_geo_id:   "14_188_2466",
-			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
-			Identifier:  AddressIdentifier,
-		},
-		{
-			L3_geo_id:   "14_188_2466",
-			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
-			Identifier:  AddressIdentifier,
-		},
-		{
-			L3_geo_id:   "14_188_2466",
-			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
-			Identifier:  AddressIdentifier,
-		},
-		{
-			L3_geo_id:   "14_188_2466",
-			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
-			Identifier:  AddressIdentifier,
-		},
-		{
-			L3_geo_id:   "14_188_2466",
-			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
-			Identifier:  AddressIdentifier,
-		},
-		{
-			L3_geo_id:   "14_188_2466",
-			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
-			Identifier:  AddressIdentifier,
-		},
-		{
-			L3_geo_id:   "14_188_2466",
-			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
-			Identifier:  AddressIdentifier,
-		},
-		{
-			L3_geo_id:   "14_188_2466",
-			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
-			Identifier:  AddressIdentifier,
-		},
-		{
-			L3_geo_id:   "14_188_2466",
-			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
-			Identifier:  AddressIdentifier,
-		},
-		{
-			L3_geo_id:   "14_188_2466",
-			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
-			Identifier:  AddressIdentifier,
-		},
-		{
-			L3_geo_id:   "14_188_2466",
-			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
-			Identifier:  AddressIdentifier,
-		},
-		{
-			L3_geo_id:   "14_188_2466",
-			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
-			Identifier:  AddressIdentifier,
-		},
-		{
-			L3_geo_id:   "14_188_2466",
-			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
-			Identifier:  AddressIdentifier,
-		},
-		{
-			L3_geo_id:   "14_188_2466",
-			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
-			Identifier:  AddressIdentifier,
-		},
-		{
-			L3_geo_id:   "14_188_2466",
-			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
-			Identifier:  AddressIdentifier,
-		},
-		{
-			L3_geo_id:   "14_188_2466",
-			AddressName: "NANGGUNGAN RT 5 RW 3 rumah mbah nari tukang--###--###--###--",
-			Identifier:  AddressIdentifier,
-		},
-		{
-			L3_geo_id:   "15_222_3043",
-			AddressName: "jln sahrun dsn nanggungan rt 02 rw 08--###--###--###--( tembok kramik merah)",
-			Identifier:  AddressIdentifier,
-		},
-		{
-			L3_geo_id:   "15_222_3043",
-			AddressName: "jln Kasman. dsn nanggungan RT/RW 01/09 ds Jatirejo--###--###--###--rumah belakang masjid nanggungan",
-			Identifier:  AddressIdentifier,
-		},
-
-		// Name Testcase
-		{
-			L3_geo_id:   "15_228_3194",
-			AddressName: "SaPNCd Evander",
-			Identifier:  NameIdentifier,
-		},
-		{
-			L3_geo_id:   "11_146_1636",
-			AddressName: "Bang Wizi Satria",
-			Identifier:  NameIdentifier,
-		},
-		{
-			L3_geo_id:   "11_146_1636",
-			AddressName: "BangWizi Satria",
-			Identifier:  NameIdentifier,
-		},
+	// Unmarshal the JSON file
+	tc, err := UnmarshalJSONFile("files/testcases.json")
+	if err != nil {
+		fmt.Println("Error:", err)
+		os.Exit(1)
 	}
 
 	m.RunTestCase(tc)
@@ -311,15 +148,15 @@ func (m Module) RunTestCase(tc []TestCase) {
 	for i, t := range tc {
 		start := time.Now()
 
-		text := t.AddressName
-		l3 := t.L3_geo_id
+		text := t.Name
+		key := t.KeyID
 		fmt.Printf("Test case %d: %s \n", i+1, text)
 
 		switch t.Identifier {
 		case NameIdentifier:
-			fmt.Printf("dictionary[%s] : %v \n", l3, m.NameDictionary[l3])
-			if len(m.NameDictionary[l3]) > 0 {
-				matches := m.NameMapAhorasick[l3].FindAll(text)
+			fmt.Printf("dictionary[%s] : %v \n", key, m.NameDictionary[key])
+			if len(m.NameDictionary[key]) > 0 {
+				matches := m.NameMapAhorasick[key].FindAll(text)
 
 				fmt.Printf("code words found : ")
 
@@ -330,9 +167,9 @@ func (m Module) RunTestCase(tc []TestCase) {
 				fmt.Printf(" ]\n")
 			}
 		case AddressIdentifier:
-			fmt.Printf("dictionary[%s] : %v \n", l3, m.AddressDictionary[l3])
-			if len(m.AddressDictionary[l3]) > 0 {
-				matches := m.AddressMapAhorasick[l3].FindAll(text)
+			fmt.Printf("dictionary[%s] : %v \n", key, m.AddressDictionary[key])
+			if len(m.AddressDictionary[key]) > 0 {
+				matches := m.AddressMapAhorasick[key].FindAll(text)
 
 				fmt.Printf("code words found : ")
 
@@ -349,4 +186,24 @@ func (m Module) RunTestCase(tc []TestCase) {
 		fmt.Printf("============= \n\n")
 	}
 
+}
+
+// Function to unmarshal JSON file to struct
+func UnmarshalJSONFile(filename string) ([]TestCase, error) {
+	// Read the file
+	file, err := ioutil.ReadFile(filename)
+	if err != nil {
+		return nil, err
+	}
+
+	// Initialize a slice to hold the test cases
+	var testCases []TestCase
+
+	// Unmarshal the JSON data into the slice of structs
+	err = json.Unmarshal(file, &testCases)
+	if err != nil {
+		return nil, err
+	}
+
+	return testCases, nil
 }
